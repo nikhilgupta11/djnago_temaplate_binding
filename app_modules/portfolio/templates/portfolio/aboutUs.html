@@ -1,0 +1,47 @@
+{% load static %}
+<!-- start About Us Section -->
+<section id="about" class="about">
+    <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+            <h2>About Us</h2>
+        </div>
+
+        {% if about_us.description1 and about_us.description2 %}
+
+            <div class="row content">
+                <div class="col-lg-6">
+                    <p>
+                        {{ about_us.description1 | safe }}
+                    </p>
+                </div>
+                <div class="col-lg-6 pt-4 pt-lg-0">
+                    <p>
+                        {{about_us.description2 | safe}}
+                    </p>
+                </div>
+            </div>
+
+        {% elif about_us.description1 %}
+            <div class="">
+                <p>
+                    {{about_us.description1 | safe}}
+                </p>
+            </div>
+
+        {% elif about_us.description2 %}
+            <div class="">
+                <p>
+                    {{about_us.description2 | safe}}
+                </p>
+            </div>
+
+        {% else %}
+            <p>
+                No content
+            </p>
+        {% endif %}
+
+    </div>
+</section>
+<!-- End About Us Section -->

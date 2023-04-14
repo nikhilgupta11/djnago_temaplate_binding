@@ -1,0 +1,22 @@
+{% load static %}
+<!-- ======= Portfolio Section ======= -->
+<section id="portfolio" class="portfolio">
+    <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+            <h2>Our Space</h2>
+        </div>
+
+        <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
+            {% for photo in our_space %}
+                <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+                    <div class="portfolio-img">
+                        <img src="{{ photo.photo.url }}" class="img-fluid" alt="">
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+
+    </div>
+</section>
+<!-- End Portfolio Section -->

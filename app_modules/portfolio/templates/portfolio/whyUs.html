@@ -1,0 +1,26 @@
+{% load static %}
+<section class="about section-bg">
+    <div class="container" data-aos="fade-up">
+
+        <div class="row content">
+            <div class="col-lg-6 pt-4 pt-lg-0">
+                <div class="section-title">
+                    <h2>{{ why_us.philosphy_heading }}</h2>
+                </div>
+                <p>
+                    {{why_us.philosphy_description | safe}}
+                </p>
+            </div>
+            <div class="col-lg-6">
+                <div class="section-title">
+                    <h2>{{ why_us.whyus_heading }}</h2>
+                </div>
+                <p>
+                    {{ why_us.whyus_description | safe }}
+                </p>
+            </div>
+        </div>
+
+    </div>
+</section>
+<!-- End About Us Section -->

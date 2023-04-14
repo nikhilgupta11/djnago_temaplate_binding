@@ -1,0 +1,62 @@
+{% load static %}
+<!-- ======= Contact Section ======= -->
+<section id="contact" class="contact">
+    <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+            <h2>Contact</h2>
+        </div>
+
+        <div class="row">
+
+            <div class="col-lg-5 d-flex align-items-stretch">
+                <div class="info">
+                    <div class="address">
+                        <i class="bi bi-geo-alt"></i>
+                        <h4>Address:</h4>
+                        {{ contact_details.address | safe}}
+                    </div>
+
+                    <div class="email">
+                        <i class="bi bi-envelope"></i>
+                        <h4>Email:</h4>
+                        <p>{{ contact_details.email }}</p>
+                    </div>
+
+                    <div class="phone">
+                        <i class="bi bi-phone"></i>
+                        <h4>Call:</h4>
+                        <p>{{ contact_details.phone }}</p>
+                    </div>
+
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3558.5160750770115!2d75.73957231504438!3d26.88711198313862!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396db4eb9eedff47%3A0x7a09d62bf028195b!2s540%2C%20Rani%20Sati%20Nagar%2C%20Nirman%20Nagar%2C%20Brijlalpura%2C%20Jaipur%2C%20Rajasthan%20302019!5e0!3m2!1sen!2sin!4v1664368718538!5m2!1sen!2sin"
+                        frameborder="0" style="border:0; width: 100%; height: 290px;" allowfullscreen></iframe>
+                </div>
+
+            </div>
+
+            <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
+                <form action="{% url 'contact-us' %}" method="post" class="php-email-form">
+                    {% csrf_token %}
+                    {% for form in contact_form %}
+                    <div class="form-group">
+                        <label for="name">{{ form.label }}</label>
+                        {{ form }}
+                    </div>
+                    {% endfor %}
+                    <div class="my-3">
+                        <div class="loading">Loading</div>
+                        <div class="error-message"></div>
+                        <div class="sent-message">Your message has been sent. Thank you!</div>
+                    </div>
+                    <div class="text-center"><button type="submit">Send Message</button></div>
+                </form>
+            </div>
+
+        </div>
+
+    </div>
+</section><!-- End Contact Section -->
+
+</main><!-- End #main -->
